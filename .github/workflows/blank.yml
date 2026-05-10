@@ -1,18 +1,12 @@
 name: Hello World
-on:
-  push:
-    branches:
-      - main
-      - develop
-  pull_request: 
-    branches:
-      - main
-permissions: 
-  contents: read
-jobs: 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: printing hello
-        run: echo "Hello"
+on: push
+jobs:
+  action-demo:
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout the code
+        - uses: actions/checkout@v4
+
+        - name: printing the contents of index.html
+          run: cat index.html
 
